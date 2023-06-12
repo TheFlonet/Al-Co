@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Riduzioni, Complessità computazionale</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/league.css">
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>2.2 Da SAT a 3CNF</section>
+				<section>Riassumere gli aspetti fondamentali relativi alla catena di riduzioni \(SAT \leq_P NNF \leq_P CNF \leq_P 3CNF\)</section>
+				<section id="fragments">
+					<p>Obiettivo: dimostrare che KP è un problema NP-hard, ovvero che è polinomialmente riducibile a SAT.</p>
+
+					<p class="fragment">Per farlo utilizziamo una catena di riduzioni polinomiali.</p>
+
+					<p class="fragment">Iniziamo dalle riduzioni su formule logiche.</p>
+				</section>
+				<section id="fragments">
+					<h2>Problema SAT</h2>
+					<p>
+						Il problema SAT ha come input le formule proposizionali ($pf$), che comprendono le variabili logiche, le costanti $true$/$false$ e le formule costruite usando congiunzione, disgiunzione e negazione.
+					</p>
+					<p class="fragment">
+						Data $f \in pf$, con variabili $FV(f) = {x_1, \dots, x_n}$, è vero che esiste un'assegnazione di valori di verità $\phi$ alle variabili in $FV(f)$ che soddisfa $f$, cioè tale che $\Phi_\phi(f) = true$?
+					</p>
+				</section>
+				<section id="fragments">
+					<h2>Problema NNF</h2>
+					<p>
+						Il problema NNF ha come input le formule che comprendono le variabili logiche e la loro rispettiva negazione, le costanti $true$/$false$ e le formule costruite usando congiunzione e disgiunzione.
+					</p>
+					<p class="fragment">
+						Data $f \in nnf$, tale che $FV(f) = {x_1, \dots, x_n}$, è vero che esiste un'assegnazione di valori di verità $\phi$ alle variabili in $FV(f)$ che soddisfa $f$, cioè tale che $\Phi_\phi(f)=true$?
+					</p>
+				</section>
+				<section id="fragments">
+					<p>\[SAT \leq_P NNF\]</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione $M: pf \to nnf$</p>
+				</section>
+				<section>
+					<section>
+						Dimostrazione
+
+						INSERIRE DIMOSTRAZIONE MATEMATICA
+
+						https://drive.google.com/file/d/1Nr0PztlSdP3WJ7aivq0DTFLKUclW_H4T/view
+					</section>
+					<section>
+						Dimostrazione Lemma 1
+
+						https://drive.google.com/file/d/189Tpj3Us0UPX0Iu6YsX0FS9Y9Z99KylH/view
+					</section>
+					<section>
+						Dimostrazione Lemma 2
+
+						https://drive.google.com/file/d/1xW3vgC4PDnr7cMKJhqiRlvZeDmP8iYoz/view
+					</section>
+				</section>
+				<section id="fragments">
+					<h2>Problema CNF</h2>
+					<p>
+						Il problema CNF è definito dalla seguente grammatica:
+					</p>
+					<p>
+						$F ::= [C] | [C], F$ <br>
+						$C ::= true | false | x | \bar{x} | C, C$
+					</p>
+					<p class="fragment">
+						Data $f \in cnf$, con variabili $FV(f) = {x_1, \dots, x_n}$, è vero che esiste un'assegnazione di valori di verità $\phi$ alle variabili in $FV(f)$ che soddisfa $f$, cioè tale che $\Phi_\phi(f) = true$?
+					</p>
+				</section>
+				<section id="fragments">
+					<p>\[NNF \leq_P CNF\]</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione $T: nnf \to cnf$</p>
+				</section>
+				<section>
+					Dimostrazione
+
+					https://drive.google.com/file/d/1hPVMNIIJdc-IAWaI5TpFLP-_5lJs2BtN/view
+
+					INSERIRE EQUAZIONI DIMOSTRAZIONE (13.2 e 13.3)
+				</section>
+				<section>
+					Intuizione lemma T
+
+					https://drive.google.com/file/d/1FgtMwxC-FHCXifE9XwoGDWzlDR4k-LiK/view
+				</section>
+				<section id="fragments">
+					<h2>Problema 3CNF</h2>
+					<p>
+						Il problema 3CNF è definito dalle formule CNF che contengono esattamente tre letterali.
+					</p>
+					<p class="fragment">
+						Data $f \in 3cnf$, con variabili $FV(f) = {x_1, \dots, x_n}$, è vero che esiste un'assegnazione di valori di verità $\phi$ alle variabili in $FV(f)$ che soddisfa $f$, cioè tale che $\Phi_\phi(f) = true$?
+					</p>
+				</section>
+				<section id="fragments">
+					<p>\[CNF \leq_P 3CNF\]</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione $F: cnf \to 3cnf$</p>
+				</section>
+				<section>
+					DIMOSTRAZIONE
+
+					https://drive.google.com/file/d/1oEWqdsXL6WXEBPHswiLCMdv1yznRhYZV/view
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script src="plugin/init.js"></script>
+	</body>
+</html>

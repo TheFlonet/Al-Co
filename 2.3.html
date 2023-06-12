@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Riduzioni, Complessità computazionale</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/league.css">
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>2.3 da 3CNF a 3COL</section>
+				<section>Riassuere gli aspetti fondamentali relativi alla riduzione \(3CNF \leq_P 3COL\)</section>
+				<section>
+					Per proseguire la catena di riduzioni che porterà a KP è necessario passare dal dominio delle formule proposizionali (3CNF) a quello dei grafi (3COL).
+				</section>
+				<section id="fragments">
+					<h2>Problema 3COL</h2>
+					<p class="fragment">
+						Sia $G = (V, E)$ in $graph$. Esiste una funzione $C: V \to {v, r, b}$, tale che $C(V)$ colora i vertici in $V$ in modo che, per ogni coppia $(x, y)$ di vertici adiacenti, $C(x) \neq C(y)$?
+					</p>
+				</section>
+				<section id="fragments">
+					<p>\[3CNF \leq_P 3COL\]</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione $L: 3cnf \to graph$</p>
+				</section>
+				<section>
+					Costruzione del grafo che rappresenta formule 3CNF
+
+					https://drive.google.com/file/d/1KByiOpGN6ymuFnUrXPCA9Z3zIQkzl2SQ/view
+				</section>
+				<section>
+					Innesto del gadget
+
+					https://drive.google.com/file/d/13C8-4XKAHUZ3iNvmo1OShMxNPazDrQKb/view
+
+					https://drive.google.com/file/d/1LbkSTgcsP46Zd4p6ueHLckcxkBIFqW-5/view
+				</section>
+				<section>
+					Dimostrazione 
+
+					https://drive.google.com/file/d/18Z8iB6BNmbUUju1z586skSIS7ulVp32G/view
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script src="plugin/init.js"></script>
+	</body>
+</html>

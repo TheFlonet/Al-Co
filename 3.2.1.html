@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Modelli quadratici</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/league.css">
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>3.2.1 Martin's solution</section>
+				<section id="fragments">
+					<p>A fine corso è stata illustrata una possibile riduzione in forma PLI del problema MST chiamata "Martin's solution"</p>
+					<p class="fragment">Discutere la complessità della "Martin's solution"</p>
+					<p class="fragment">Illustrare intuizioni alternative a quelle fornite a lezione riguardo al significato dei vincoli lineari che caratterizzano la "Martin's solution" e che dovrebbero renderla più compatta di quelle tradizionali</p>
+				</section>
+				<section>
+					<h2>Problema MST</h2>
+					<p>
+						Dato $G = (V, E, \phi: E \to \mathbb{R}^+ \cup {0})$, in cui $\phi$ è la funzione che assegna dei valori, i pesi, non negativi a ogni arco, il peso è $\phi(G) = \sum_{e \in E} \phi(e)$.
+					</p>
+					<p>
+						Si vuole trovare $T = (V, F)$ sotto-grafo di $G$ che sia un albero, e che $\phi(T)$ assume valore minimo.
+					</p>
+				</section>
+				<section>
+					<h2>Martin's formulation</h2>
+
+					<p>$\min_{x, y} \sum_{(i, j) \in E}\phi_{ij}x_{ij}$</p>
+					<p>
+						<ol>
+							<li>$\sum_{(i,j) \in E} x_{ij} = n-1$</li>
+							<li>$y_{ij}^k + y_{ji}^k = x_{ij}, \forall (i, j) \in E, k \in V$</li>
+							<li>$\sum_{k\in V \ {i, j}}i_{ik}^j+x_{ij} = 1, \forall (i, j) \in E$</li>
+						</ol>
+					</p>
+					<p>$x_{ij}, y_{ij}^k, y_{ji}^k \in {0, 1}, \forall (i, j) \in E, k \in V$</p>
+				</section>
+				<section id="fragments">
+					<p>Interpretazione delle variabili binarie:</p>
+					<ul>
+						<li class="fragment">test</li>
+						<li class="fragment">test</li>
+						<li class="fragment">test</li>
+					</ul>
+				</section>
+				<section>
+					Perché è una soluzione vantaggiosa
+				</section>
+				<section>
+					Alternative intrattabili (vincoli esponenziali)
+				</section>
+				<section>
+					Parallelismo con Christofides
+				</section>
+				<section>
+					Numero di vincoli del problema
+				</section>
+				<section>
+					GRAFICO num-nodi -- num-vincoli
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script src="plugin/init.js"></script>
+	</body>
+</html>

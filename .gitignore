@@ -1,0 +1,5 @@
+*.pdf
+demo.html
+test/
+examples/
+.DS_Store
