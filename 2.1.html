@@ -26,13 +26,44 @@
 					</ul><br>
 					In relazione al concetto "Riduzione polinomiale tra problemi computazionali"
 				</section>
-				<section>Cosa si intende per riduzione polinomiale</section>
-				<section>PTIME vs NPTIME</section>
 				<section>
-					Implicazioni della riduzione
+					<h2>Riduzione Polinomiale</h2>
+					<p>
+						Avendo come esempio due problemi A e B, <br>sappiamo che A è intrattabile. 
+						<br>
+						$A \leq_P B$ significa che A è un sottoproblema di B. 
+						<br>
+						Questa operazione DEVE essere svolta in un numero polinomiale di passi.
+					</p>
 				</section>
 				<section>
-					Rilevanza della riduzione
+					I problemi motivazionali sono tutte varianti di KP.
+					<br><br>
+					Quindi per dimostrare la loro difficoltà intrinseca bisogna dimostrare che "contengono" il problema SAT.
+				</section>
+				<section>
+					I problemi NP-complete rimangono difficili, ma sapere i sottoproblemi che li compongono rende possibile sfruttare metodologie algoritmiche specifiche e particolarmente efficaci/efficienti nel caso medio.
+				</section>
+				<section>
+					Definizione formale di riduzione 10.6.1
+				</section>
+				<section id="fragments">
+					<h2>Riduzione per definire NP-complete</h2>
+					<p class="fragment">Cos'è la classe PTime</p>
+					<p class="fragment">Cos'è la classe NPTime</p>
+				</section>
+				<section>
+					<h2>Riduzione per definire NP-complete</h2>
+					<p>
+						P è NP-complete se:
+						<ol>
+							<li>$P \in NPTime$</li>
+							<li>$\forall P' \in NPTime, P' \leq_P P$</li>
+						</ol>
+					</p>
+				</section>
+				<section>
+					10.6.2 ultimo elenco
 				</section>
 			</div>
 		</div>
