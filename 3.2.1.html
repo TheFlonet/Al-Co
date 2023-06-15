@@ -32,33 +32,67 @@
 					</p>
 				</section>
 				<section>
+					Sappiamo esistere soluzioni per rendere il problema sotto forma di programmazione lineare intera con variabili binarie, 
+					come Sub-tour elimination e Cut-set.
+					<br>
+					Purtroppo tali soluzioni portano ad un numero esponenziale di vincoli nel caso peggiore.
+				</section>
+				<section>
+					Formulazioni alternative, 
+					<br>con un numero polinomiale di vincoli sono:
+					<p>
+						<ul>
+							<li>Single-commodity flow formulation</li>
+							<li>Martin's formulation</li>
+						</ul>
+					</p>
+				</section>
+				<section>
 					<h2>Martin's formulation</h2>
 
-					<p>$\min_{x, y} \sum_{(i, j) \in E}\phi_{ij}x_{ij}$</p>
+					<p>$$\min_{x, y} \sum_{(i, j) \in E}\phi_{ij}x_{ij}$$</p>
 					<p>
 						<ol>
 							<li>$\sum_{(i,j) \in E} x_{ij} = n-1$</li>
 							<li>$y_{ij}^k + y_{ji}^k = x_{ij}, \forall (i, j) \in E, k \in V$</li>
-							<li>$\sum_{k\in V \ {i, j}}i_{ik}^j+x_{ij} = 1, \forall (i, j) \in E$</li>
+							<li>$\sum_{k\in V \ {i, j}}y_{ik}^j+x_{ij} = 1, \forall (i, j) \in E$</li>
+							<li>$x_{ij}, y_{ij}^k, y_{ji}^k \in {0, 1}, \forall (i, j) \in E, k \in V$</li>
 						</ol>
 					</p>
-					<p>$x_{ij}, y_{ij}^k, y_{ji}^k \in {0, 1}, \forall (i, j) \in E, k \in V$</p>
-				</section>
-				<section id="fragments">
-					<p>Interpretazione delle variabili binarie:</p>
-					<ul>
-						<li class="fragment">test</li>
-						<li class="fragment">test</li>
-						<li class="fragment">test</li>
-					</ul>
 				</section>
 				<section>
-					Perché è una soluzione vantaggiosa
+					<h3>Interpretazione delle variabili binarie</h3>
+					<p>
+						$$x_{ij} = \begin{cases}
+							0 & (i, j) \notin \text{archi MST} \\
+							1 & (i, j) \in \text{archi MST} 
+						\end{cases}$$
+					</p>
+					<p>
+						Ipotizzando di rimuovere l'arco $(i, j)$ da MST, allora:
+						$$y_{ij}^k = \begin{cases}
+							0 & k\ \text{è connesso a i} \\
+							1 & k\ \text{è connesso a j}
+						\end{cases}$$
+						Discorso analogo per $y_{ji}^k$
+					</p>
+				</section>
+				<section>
+					<h3>Interpretazione dei vincoli</h3>
+					<p>
+						<ol>
+							<li>L'albero deve avere esattamente $n-1$ archi</li>
+							<li>Se $x_{ij} = 1, \forall k \in V, k \in$ "lato" di $i$ o di $j$</li>
+							<li>Se $x_{ij} = 1$ tutti gli altri nodi sono connessi a $i$</li>
+						</ol>
+					</p>
+				</section>
+				<section>
+					In un grafo con $|V| = n$ 
 					<br>
-					Alternative intrattabili (vincoli esponenziali)
-				</section>
-				<section>
-					Perché funziona
+					$|E| \in O(n^2)$ 
+					<br>
+					Quindi il problema presanta $O(n^3)$ vincoli.
 				</section>
 			</div>
 		</div>
