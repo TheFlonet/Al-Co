@@ -32,21 +32,38 @@
 					<p class="fragment"> Si vuole costruire una funzione di riduzione $L: 3cnf \to graph$</p>
 				</section>
 				<section>
-					Costruzione del grafo che rappresenta formule 3CNF
-
-					https://drive.google.com/file/d/1KByiOpGN6ymuFnUrXPCA9Z3zIQkzl2SQ/view
+					<p>
+						Costruzione di grafi a partire da formule logiche
+					</p>
+					<img src="./res/3col.svg" 
+						alt="Gadget per passare da formule logiche a grafi" 
+						height="300em" style="background-color: white;">
+					<p>
+						L'obiettivo è trovare una 3-colorazione (per i significati logici di $N, true, false$) per il grafo corrispondente alla formula di partenza.
+					</p>
 				</section>
 				<section>
-					Innesto del gadget
-
-					https://drive.google.com/file/d/13C8-4XKAHUZ3iNvmo1OShMxNPazDrQKb/view
-
-					https://drive.google.com/file/d/1LbkSTgcsP46Zd4p6ueHLckcxkBIFqW-5/view
+					<h3>Primo raffinamento</h3>
+					<p>
+						Per rappresentare la mutua esclusione di due letterali, ad esempio $x$ e $\bar{x}$ è sufficiente aggiungere un arco tra i nodi corrispondenti
+					</p>
 				</section>
 				<section>
-					Dimostrazione 
-
-					https://drive.google.com/file/d/18Z8iB6BNmbUUju1z586skSIS7ulVp32G/view
+					<h3>Versione definitiva</h3>
+					<p>
+						Per concludere la traduzione si innestra ad ogni tripla di letterali il seguente gadget
+					</p>
+					<img src="./res/3col-gadget.svg" 
+						alt="Secondo gadget per passare da formule logiche a grafi" 
+						height="300em" style="background-color: white;">
+				</section>
+				<section>
+					<p>
+						Si dimostra che per ogni tripla se uno dei 3 letterali è positivo il gadget innestato è 3-colorabile, dimostrando quindi che se $f \in 3CNF$, allora $L(f) \in 3COL$.
+					</p>
+					<p>
+						Mentre se nessuno dei letterali considerati è positivo, $f \notin 3CNF$, il gadget innestato non è 3-colorabile, $L(f) \notin 3COL$.
+					</p>
 				</section>
 			</div>
 		</div>
