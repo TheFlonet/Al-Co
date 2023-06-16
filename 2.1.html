@@ -45,12 +45,22 @@
 					I problemi NP-complete rimangono difficili, ma sapere i sottoproblemi che li compongono rende possibile sfruttare metodologie algoritmiche specifiche e particolarmente efficaci/efficienti nel caso medio.
 				</section>
 				<section>
-					Definizione formale di riduzione 10.6.1
+					$P_1$ e $P_2$ sono due problemi computazionali.
+					$P_1$ si riduce a $P_2$ ($P_1 \leq_P P_2$) se possiamo definire un'opportuna funzione di riduzione
+					<br>
+					$F: Dom(P_1) \to Dom(P_2)$.
+				</section>
+				<section>
+					<ul>
+						<li>Tale funzione di riduzione deve avere costo polinomiale</li>
+						<li>Dato input $x \in Dom(P_1)$, se $x$ è un'istanza di $P_1$, allora $F(x)$ è un'istanza di $P_2$</li>
+						<li>Dato input $x \in Dom(P_1)$, se $x$ non è un'istanza di $P_1$, allora $F(x)$ non è un'istanza di $P_2$</li>
+					</ul>
 				</section>
 				<section id="fragments">
 					<h2>Riduzione per definire NP-complete</h2>
-					<p class="fragment">Cos'è la classe PTime</p>
-					<p class="fragment">Cos'è la classe NPTime</p>
+					<p class="fragment">Cos'è la classe $PTime$</p>
+					<p class="fragment">Cos'è la classe $NPTime$</p>
 				</section>
 				<section>
 					<h2>Riduzione per definire NP-complete</h2>
@@ -63,7 +73,17 @@
 					</p>
 				</section>
 				<section>
-					10.6.2 ultimo elenco
+					<ol>
+						<li>
+							$PTime$ è contenuta in $NPTime$, l'algoritmo non deterministico degenere, non richiede il certificato
+						</li>
+						<li>
+							Se $\exists P \in NP-complete \cap PTime$ allora $NPTime = PTime$
+						</li>
+						<li>
+							Se si dimostra che $\exists P \in NP-complete \setminus PTime$ allora $NPTime \neq PTime$
+						</li>
+					</ol>
 				</section>
 			</div>
 		</div>

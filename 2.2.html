@@ -48,21 +48,42 @@
 					<p class="fragment"> Si vuole costruire una funzione di riduzione $M: pf \to nnf$</p>
 				</section>
 				<section>
-					Dimostrazione
+					$$\forall f. f \in SAT \iff M(f) \in NNF$$
 
-					INSERIRE DIMOSTRAZIONE MATEMATICA
+					Per definizione, sia $f \in SAT$, allora:
 
-					https://drive.google.com/file/d/1Nr0PztlSdP3WJ7aivq0DTFLKUclW_H4T/view
+					$$\exists \phi: FV(f) \to \{true, falst\}\ \Phi_\phi(f) = true$$
 				</section>
 				<section>
-					Dimostrazione Lemma 1
+					Per il lemma 1:
 
-					https://drive.google.com/file/d/189Tpj3Us0UPX0Iu6YsX0FS9Y9Z99KylH/view
+					$$\exists\phi: FV(M(f)) \to \{true, falst\}\ \Phi_\phi(f) = true$$
+
+					Il lemma 1 mostra per induzione strutturale su $f$ che $\forall f, FV(f) = FV(M(f))$
 				</section>
 				<section>
-					Dimostrazione Lemma 2
+					Che equivale a:
 
-					https://drive.google.com/file/d/1xW3vgC4PDnr7cMKJhqiRlvZeDmP8iYoz/view
+					$$\exists\phi: FV(M(f)) \to \{true, falst\}$$
+					$$M(\Phi_\phi(f)) = M(true)$$
+				</section>
+				<section>
+					Per il lemma 2:
+
+					$$\exists\phi: FV(M(f)) \to \{true, falst\}$$
+					$$\Phi_\phi(M(f)) = M(true)$$
+
+					Il lemma 2 mostra per induzione strutturale su $f$ che $\forall\phi.\Phi_\phi(M(f)) = M(\Phi_\phi(f))$
+				</section>
+				<section>
+					Che equivale a: 
+
+					$$\exists\phi: FV(M(f)) \to \{true, falst\}$$
+					$$\Phi_\phi(M(f)) = true$$
+
+					Ovvero, per definizione:
+
+					$$M(f) \in NNF$$
 				</section>
 				<section id="fragments">
 					<h2>Problema CNF</h2>
@@ -82,16 +103,31 @@
 					<p class="fragment"> Si vuole costruire una funzione di riduzione $T: nnf \to cnf$</p>
 				</section>
 				<section>
-					Dimostrazione
+					$$\forall f. f \in NNF \iff T(f) \in CNF$$
 
-					https://drive.google.com/file/d/1hPVMNIIJdc-IAWaI5TpFLP-_5lJs2BtN/view
+					Dove $T(f) = [a], C[a, f]$. 
+					<br>
+					Per definizione, sia $f \in NNF$, allora:
 
-					INSERIRE EQUAZIONI DIMOSTRAZIONE (13.2 e 13.3)
+					$$\exists \phi.\Phi_\phi(f) = true$$
 				</section>
 				<section>
-					Intuizione lemma T
+					Per il lemma T.1 ($\to$):
+					
+					<p>Supponiamo</p>
+					
+					$$\exists \phi.\Phi_\phi(f) = true \iff$$
+					$$\exists \phi'.\Phi_{\phi'}(C[a, f]) = true \land \phi'(a) = true$$
+					$\Phi_{\phi'}([a], C[a, f]) = \Phi_{\phi'}(T(f))$, $T(f) \in CNF$ 
+				</section>
+				<section>
+					Per il lemma T.2 ($\leftarrow$):
+					
+					<p>Supponiamo</p>
 
-					https://drive.google.com/file/d/1FgtMwxC-FHCXifE9XwoGDWzlDR4k-LiK/view
+					$$\exists \phi.\Phi_\phi(f) = false \iff$$
+					$$\exists \phi'.\Phi_{\phi'}(C[a, f]) = true \land \phi'(a) = false$$
+					$\Phi_{\phi'}([a], C[a, f]) = \Phi_{\phi'}(T(f))$, $T(f) \notin CNF$ 
 				</section>
 				<section id="fragments">
 					<h2>Problema 3CNF</h2>
@@ -107,9 +143,44 @@
 					<p class="fragment"> Si vuole costruire una funzione di riduzione $F: cnf \to 3cnf$</p>
 				</section>
 				<section>
-					DIMOSTRAZIONE
+					$$\forall f. f \in CNF \iff F(f) \in 3CNF$$
 
-					https://drive.google.com/file/d/1oEWqdsXL6WXEBPHswiLCMdv1yznRhYZV/view
+					La dimostrazione va divisa in due parti
+					<ol>
+						<li>Caso in cui $f$ è composta da una sola clausola</li>
+						<li>Caso in cui $f$ contiene più clausole</li>
+					</ol>
+				</section>
+				<section>
+					<p>Primo caso, a sua volta si divide in 4 sottocasi:</p>
+					<p>
+						<ol>
+							<li>$f$ è già in 3CNF, $F$ non deve modificare nulla</li>
+							<li>$f = [l]$, $F$ aggiunge due nuove variabili e crea tutte le possibili triple</li>
+							<li>$f = [l_1, l_2]$, simile al secondo sottocaso, ma $F$ aggiunge una sola variabile</li>
+							<li>$f = [l_1,\dots,l_k]$, $k>3$, si aggiungono letterali ricorsivamente in modo da creare le triple una per volta, fino a ricondursi ai sottocasi precedenti</li>
+						</ol>
+					</p>
+				</section>
+				<section>
+					<p>Secondo caso:</p>
+					<ol>
+						<li>Per induzione sul numero di clausole:<br>$C_1\_C_{n-1} \in CNF \iff$<br>$F(C_1\_C_{n-1}) \in 3CNF$</li>
+						<li>Per il primo caso:<br>$C_n \in CNF \iff F(C_n) \in 3CNF$</li>
+						<li>$(A \iff B \land C \iff D) \iff$<br>$((A \land C) \iff (B \land D))$ è una tautologia</li>
+					</ol>
+				</section>
+				<section>
+					<p>
+						Mettendo in $\land$ i punti 1 e 2 è possibile riscrivere le formule per ottenere la tautologia del punto 3.
+						<br>
+						$((C_1\_C_{n-1} \in CNF) \land (C_n \in CNF)) \iff ((F(C_1\_C_{n-1}) \in 3CNF) \land (F(C_n) \in 3CNF))$
+					</p>
+					<p>
+						Riscrivendo in modo compatto: <br>
+						$C_1\_C_{n-1},C_n \in CNF\iff$ <br>
+						$F(C_1\_C_{n-1}),F(C_n) \in 3CNF$
+					</p>
 				</section>
 			</div>
 		</div>
