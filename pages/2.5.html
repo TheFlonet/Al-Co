@@ -6,12 +6,12 @@
 
 		<title>Riduzioni, Complessità computazionale</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/league.css">
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/league.css">
 		
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -41,14 +41,12 @@
 					<p class="fragment"> Si vuole costruire una funzione di riduzione $E_S: Set\times Set\times Set \to \mathcal{P}(\mathbb{N})$</p>
 				</section>
 				<section>
-					Intuizione
+					La funzione $E_S$ è definita come
 
-					https://drive.google.com/file/d/1Brr2mcNY2WhqBkVvpZXcLkpPfq139raG/view
-				</section>
-				<section>
-					Formalizzazione
+					$$E_S((U, S), X) = (\{\sum_{i=0}^{|U|-1}p^ix[i] \vert x \in X\}, \frac{p^{|U|}-1}{p-1})$$
 
-					https://drive.google.com/file/d/1OX0a1kS7jNfQn9asZ5z6zPTnCeRfGVzJ/view
+					Dove $\#x = |\{A \vert x \in A \in S\}|$ e 
+					<br>$p = 1 + max\{\#x \vert x \in U\}$
 				</section>
 				<section>
 					Dimostrazione
@@ -58,11 +56,11 @@
 			</div>
 		</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script src="plugin/math/math.js"></script>
-		<script src="plugin/init.js"></script>
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script src="../plugin/math/math.js"></script>
+		<script src="../plugin/init.js"></script>
 	</body>
 </html>
