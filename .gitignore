@@ -4,3 +4,4 @@ test/
 examples/
 .DS_Store
 tmp-docs/
+status.md
