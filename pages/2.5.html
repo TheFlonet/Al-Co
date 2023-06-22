@@ -38,20 +38,29 @@
 				</section>
 				<section id="fragments">
 					<p>\[EXCO \leq_P SubsetSum\]</p>
-					<p class="fragment"> Si vuole costruire una funzione di riduzione $E_S: Set\times Set\times Set \to \mathcal{P}(\mathbb{N})$</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione $E_S: Set\times Set\times Set \to \mathcal{P}(\mathbb{N})\times\mathbb{N}$</p>
 				</section>
 				<section>
 					La funzione $E_S$ è definita come
 
 					$$E_S((U, S), X) = (\{\sum_{i=0}^{|U|-1}p^ix[i] \vert x \in X\}, \frac{p^{|U|}-1}{p-1})$$
 
-					Dove $\#x = |\{A \vert x \in A \in S\}|$ e 
-					<br>$p = 1 + max\{\#x \vert x \in U\}$
+					Dove $\#x = |\{A \vert x \in A \in S\}|$
+					<br>
+					Dimensione degli insiemi di $S$ che contengono $x$
+					<br>
+					$p = 1 + max\{\#x \vert x \in U\}$
+					<br>
+					Primo numero che non genera riporti nelle somme
 				</section>
 				<section>
-					Dimostrazione
-
-					https://drive.google.com/file/d/1JmfR12TLkYQwy0RqNm1gmoUx-Z8pJmyn/view
+					$\frac{p^{|U|}-1}{p-1} = p^{m-1}+\dots+1$
+					<br>
+					Ovvero
+					<br>
+					$\frac{p^{|U|}-1}{p-1} = [p^{m-1}\dots p^0]\begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix}^T \;$
+					<br>
+					$[\forall_{1\leq i\leq n}, (\exists 0\leq j \leq m-1, \alpha_{ij}=1 \to$<br>$(\forall 0\leq k \neq i \leq n, \alpha_{ik}=0))] \land$<br>$[\forall 0 \leq j \leq m-1, (\exists 1 \leq i\leq n, \alpha_{ij} = 1)]$
 				</section>
 			</div>
 		</div>

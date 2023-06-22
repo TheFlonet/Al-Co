@@ -42,15 +42,37 @@
 					<p class="fragment"> Si vuole costruire una funzione di riduzione $E_x: graph \to (X \times \mathcal{P}(X))$</p>
 				</section>
 				<section>
-					DA RECUPERARE, ERO ASSENTE!!
+					Utilizziamo:
 					<br>
-					Dimostrazione
-
-					https://drive.google.com/file/d/1KttQFkVmt_OXOloKcjGrcE8BC4NaTICP/view
-
-					https://drive.google.com/file/d/1oVCoHx6uvxQproOoUYXo2CeQs2Z0orzq/view
-
-					https://drive.google.com/file/d/1GhctAp0bBAe6qnga__syMkWo87ch8F6c/view
+					$N(x) = \{y | (x, y) \in E\}$
+					<br>
+					$\chi(x)$ è la funzione di colorazione del nodo $x$
+					<br>
+					$\forall x \in V, \forall y \in N(x), \chi(x) \neq \chi(y)$
+				</section>
+				<section>
+					Si definisce $S'$ come:
+					<br>
+					$(\bigcup_{x \in V}\{x, \chi(x)_x\})$
+					<br>
+					Colore di ogni vertice
+					<br>
+					$\cup(\bigcup_{x \in V}\bigcup_{y\in N(x)}\{\chi(x)_{xy}, \chi(y)_{yx}\})$ 
+					<br>
+					Colore delle congiunzioni
+					<br>
+					$\cup(\bigcup_{x\in V}\bigcup_{C\neq\chi(x)}\{C_x\_C_{xy_n} | \{y_1\_y_n\} = N(x)\})$ 
+					<br>
+					Colore che si espande verso gli adiacenti
+					<br>
+					$S'$ così costruito è una copertura valida
+				</section>
+				<section>
+					Data una copertura esatta si costruisce il grafo 3COL per assurdo.
+					<br>
+					Si suppone si costurisca un grafo con due adiacenti dello stesso colore.
+					<br>
+					Ma per come ho costruito $S$ questa situazione non è possibile.
 				</section>
 			</div>
 		</div>

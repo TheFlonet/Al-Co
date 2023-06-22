@@ -21,31 +21,53 @@
 					Illustrare i motivi per cui, nel tempo, sono state sviluppate precise tecniche algoritmiche per risolvere problemi detti "intrattabili"
 				</section>
 				<section>
-					Approccio generico per la risoluzione di problemi 
+					Una buona parte dei problemi può essere descritta come l'allocazione di risorse per massimizzare un ricavo. Troviamo quindi:
+					<ul>
+						<li>Risorsa economica: ciò di cui si dispone e si può usare</li>
+						<li>Attività: diversi modi di usare le risorse economiche</li>
+						<li>Ricavo: quantità di guadagno derivato dall'allocazione di un certo quantitativo di risorse ad un'attività</li>
+					</ul>
 				</section>
 				<section>
-					Strumenti del calcolo classico
+					<h3>Ipotesi sulla funzione ricavo</h3>
+					<ul>
+						<li>Linearità: Il ricavo $g_i(x_i)$ dipende esclusivamente da $x_i$</li>
+						<li>Proporzionalità centrale: La funzione ricavo segue un andamento simile alla sigmoide</li>
+						<li>Composizione lineare dei ricavi: Il ricavo totale è la somma dei singoli ricavi</li>
+						<li>Partizione esatta: A fine processo sono state allocate tutte le risorse </li>
+					</ul>
 				</section>
 				<section>
-					Efficienza del calcolo classico
+					Il calcolo classico permette di affrontare questa categoria di problemi tramite l'uso di derivate prime, che permettono di calcolare i minimi e i massimi di una funzione.
 				</section>
 				<section>
-					Limiti delle funzioni utilizzate
+					Tuttavia gli strumenti del calcolo classico non permettono di ricavare risposte che corrispondono agli estremi dell'intervallo considerato.
+					<br>
+					Inoltre non è possibile applicare la derivata a funzioni non continue.
 				</section>
 				<section>
-					Alternativa 1, Programmazione Lineare
+					Anche supponendo di lavorare sempre con funzioni derivabili e con minimi/massimi non corrispondenti ad estremi dell'intervallo di derivazione il calcolo classico può risultare intrattabile.
+					<br>
+					Avendo $r$ radici per $N$ variabili ed $e$ estremi per $V$ vincoli il numero di punti da provare nel caso pessimo corrisponde a: $(r + e*V)^N$
 				</section>
 				<section>
-					Alternativa 2, Programmazione Lineare Intera
+					<h3>Programmazione lineare</h3>
+					Non risulta adatta per via della natura delle variabili considerate
 				</section>
 				<section>
-					Alternativa 3, Euristiche greedy
+					<h3>Programmazione Lineare Intera</h3>
+					Risulta equivalente al calcolo classico
 				</section>
 				<section>
-					Necessità di risolvere in modo efficiente i problemi motivazionali
+					<h3>Euristiche greedy</h3>
+					Per via della natura delle euristiche greedy, ovvero l'assenza di ripensamenti, non ci sono garanzie di poter ottenere una risposta o in generale un buon risultato.
 				</section>
 				<section>
-					Generalizzazione dei problemi motivazionali (AI e Turing)
+					La ricerca di massimi e minimi in uno spazio è un problema attuale e con ripercussioni in svariati settori.
+					<br>
+					Tra questi si può citare l'addestramento di reti profonde, che minimizzano l'errore su un dataset.
+					<br>
+					<img src="../res/noshort.png" alt="Esempio di loss landscape" height="250em">
 				</section>
 			</div>
 		</div>
