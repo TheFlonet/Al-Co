@@ -18,12 +18,66 @@
 			<div class="slides">
 				<section>1.5 Knapsack</section>
 				<section>Sviluppare una panoramica sul problema dello zaino, trattando aspetti come: rilevanza, varianti, esempi di problemi essenzialmente reali riconducibili a KP, o sue varianti, equivalenza tra varianti, non necessariamente sviluppate a lezione</section>
-				<section>Introduzione a KP</section>
-				<section>KP su "valutazioni"</section>
-				<section>KP su "richio"</section>
-				<section>Riduzione di Multi-dimensional KP</section>
-				<section>KP su "Bando"</section>
-				<section>Riduzione di Multiple-choice KP</section>
+				<section>
+					<h2>Definizione di KP</h2>
+					<p>
+						massimizzare $\sum_{k=1}^np_kx_k$
+						<br>
+						soggetto a $\sum_{k=1}^nw_kx_k \leq C$
+						<br>
+						con $x_1\dots x_n \in \{0, 1\}$
+						<br>
+						$0 \neq \sum_{k=1}^nw_k > C$
+						<br>
+					</p>
+				</section>
+				<section>
+					Un esempio pratico del problema della zaino si può riscontrare sul problema motivazionale "valutazioni"
+					<br>
+					massimizzare $\sum_{k=1}^{50}p_kx_k$
+					<br>
+					soggetto a $\sum_{k=1}^{50}m_kx_k \leq C$
+					<br>
+					con $x_1\dots x_n \in \{0, 1\}$
+					<br>
+					$\sum_{k=1}^{50}m_k > 100$
+				</section>
+				<section>
+					Il problema motivazionale "rischio" può essere interpretato come Multi-dimensional KP con $d=2$.
+					In questo caso le due dimensioni rappresentano l'affidabilità e il guadagno.
+				</section>
+				<section>
+					<h3>Riduzione di Multi-dimensional KP</h3>
+					massimizzare $\sum_{k=1}^np_kx_k$, soggetto a
+					<br>
+					$\sum_{k=1}^nw_{1k}x_k \leq C_1$
+					<br>
+					$\sum_{k=1}^nw_{2k}x_k \leq C_2$
+					<br>
+					con $x_1\dots x_n \in \{0, 1\}$
+				</section>
+				<section>
+					L'idea è combinare i due vincoli in uno unico per rifarsi al problema dello zaino binario.
+					
+					$$\sum_{k=1}^n ??? \leq ???$$
+				</section>
+				<section>
+					Il problema motivazionale "bando" può essere interpretato come Multiple-choice KP.
+					In cui avendo un solo "zaino" si vuole selezionare un elemento per tipologia.
+				</section>
+				<section>
+					<h3>Riduzione di Multiple-choice KP</h3>
+					massimizzare $\sum_{i=1}^m\sum_{j \in N_i}p_{ij}x_{ij}$, soggetto a
+					<br>
+					$\sum_{i=1}^m\sum_{j \in N_i}w_{ij}x_{ij} \leq C$
+					<br>
+					$\sum_{j \in N_i}x_{ij} = 1, i = 1, \dots, m$
+					<br>
+					con $x_{ij} \in \{0, 1\}, i \in 1,\dots,m, j\in N_i$
+				</section>
+				<section>
+					
+				</section>
 			</div>
 		</div>
 
