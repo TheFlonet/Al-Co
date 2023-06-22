@@ -18,10 +18,40 @@
 			<div class="slides">
 				<section>1.8 KP e programmazione dinamica</section>
 				<section>Sviluppare una panoramica su relazioni e conseguenze dell'usare la programmazione dinamica per risolvere KP</section>
-				<section>Cambio di prospettiva</section>
-				<section>Ottimalità</section>
-				<section>Codice Python</section>
-				<section>Analisi della complessità</section>
+				<section>
+					La programmazione dinamica è una metodologia algoritmica per risolvere i problemi tramite equazioni ricorsive.
+				</section>
+				<section>
+					$$f(\bar{g}) = \max_{\bar{x}}[H(\bar{g}, \bar{x}, f(T(\bar{g}, \bar{x})))]$$
+					<ul>
+						<li>$\bar{x}$: porzioni di risorse per massimizzare $H$</li>
+						<li>$\bar{g}$: parametri del problema o vincoli sulla forma delle risorse</li>
+						<li>$T$: funzione predecessore</li>
+					</ul>
+				</section>
+				<section>
+					La programmazione dinamica è compatibile con il principio di ottimalità.
+					<br>
+					Per questo motivo i passi della funzione predecessore che compongono la soluzione sono anch'essi ottimi.
+				</section>
+				<section>
+					L'applicazione della programmazione dinamica al problema dello zaino prevede di costruire una tabella di risultati parziali sino al raggiungimento dell'ottimo.
+					<br>
+					Tale tabella viene riempita scorrendo le colonne.
+					<br>
+					Siccome l'interesse è nella singola colonna su cui si svolge il calcolo se l'obiettivo è solo restituire la capacità massima si può snellire la struttura dati per usare due colonne o solo una.
+				</section>
+				<section>
+					Codice Python
+				</section>
+				<section>
+					La struttura matriciale dell'approccio suggerirebbe una complessità polinomiale.
+					<br>
+					Tuttavia la tabella dei risultati parziali è composta da un numero polinomiale di righe, ovvero gli $n$ elementi dello zaino,
+					ma da un numer oesponenziale di colonne $C$, pari a tutte le possibili capacità dello zaino.
+					<br>
+					Per questo motivo KP viene definito <i>pseudo-polinomiale</i>, ovvero polinomiale nel valore di uno dei suoi input.
+				</section>
 			</div>
 		</div>
 
