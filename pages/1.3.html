@@ -19,28 +19,54 @@
 				<section>1.3 Backtracking</section>
 				<section>Inquadrare e illustrare il concetto "visita Backtracking" nell'ambito della ricerca di risposta a problemi algoritmicamente intrattabili</section>
 				<section>
-					Intuizione
+					La strategia Brute-Force non è praticabile per la maggior parte delle applicazioni pratiche.
+					<br>
+					Intuitivamente si vorrebbe "instradare" la ricerca per concentrasi su zone dell'albero promettenti.
 				</section>
 				<section>
-					Euristiche
+					Si introduce quindi il concetto di euristica della ricerca, caratterizzata da:
+					<br>
+					<ul>
+						<li>Una funzione bound</li>
+						<li>Un criterio di pruning</li>
+					</ul>
 				</section>
 				<section>
-					Vincoli impliciti ed espliciti
+					La tipologia di problemi su cui è possibile sfruttare la strategia Backtracking è caratterizzata da due tipologie di vincoli:
+					<br>
+					<ul>
+						<li>Espliciti: determinano lo spazio in cui cercare le soluzioni (dominio delle variabili)</li>
+						<li>Impliciti: relazioni tra variabili (rendono difficile il problema)</li>
+					</ul>
 				</section>
 				<section>
-					Spazio degli stati come albero
+					<h3>Caratteristiche dell'albero</h3>
+					<ol>
+						<li>Spazio degli stati: $\{(S_1 \times \dots \times S_j)\}_{0 \leq j \leq n}$</li>
+						<li>Stato del problema: ogni nodo è una tupla $(x_1,\_,x_k) \in (S_1,\_,S_k) %\in \{(S_1 \times \_ \times S_j)\}_{0 \leq j \leq n}$</li>
+						<li>Spazio dei cammini: sequenza di stati che descrive un sotto-ramo</li>
+						<li>Spazio delle soluzioni: cammini che soddisfano i vincoli epliciti</li>
+						<li>Spazio delle risposte:  cammini che soddisfano i vincoli impliciti</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Tipologie di nodi</h3>
+					<ol>
+						<li>Dead node: radice di sotto-alberi completi o potati</li>
+						<li>Live node: nodo di cui sono stati generati i figli</li>
+						<li>E-node: live node di cui si genererà il figlio</li>
+					</ol>
 				</section>
 				<section>
 					Codice Python: da Brute-Force a Backtracking
 				</section>
 				<section>
-					Quanto l'euristica rende flessibile la ricerca con Backtracking
-				</section>
-				<section>
-					Backtracking come Breadth-first search
-				</section>
-				<section>
-					Backtracking come D-search
+					La politica di generazione degli E-node può avere come risultato diverse strategie di ricerca:
+					<br>
+					<ul>
+						<li>Breadth-first search: organizza i live node come una coda</li>
+						<li>D-search: organizza i live node come uno stack</li>
+					</ul>
 				</section>
 			</div>
 		</div>
