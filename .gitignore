@@ -5,3 +5,5 @@ examples/
 .DS_Store
 tmp-docs/
 status.md
+codice/.idea
+codice/venv
