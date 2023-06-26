@@ -21,50 +21,83 @@
 					Inquadreare e illustrare il concetto "visita Brute-Force" nell'ambito della ricerca di risposte a problemi algoritmicamente intrattabili
 				</section>
 				<section id="fragments">
-					<p>
-						PL, PLI e le euristiche greedy non forniscono soluzioni in tempo efficiente per problemi reali come quelli rappresentato da Valutazioni.
-					</p>
+					PL, PLI e le euristiche greedy non forniscono soluzioni efficienti per problemi reali come quelli rappresentato da Valutazioni.
 					<p class="fragment">
 						Algoritmicamente è possibile formalizzare la struttura per rappresentare ogni possibile soluzione al problema al fine di ricercare la risposta in modo esaustivo
 					</p>
 				</section>
 				<section>
-					Questo approccio viene comunemente definito <br>
-					Brute-Force
+					Questo approccio viene comunemente definito
+					<h3>Brute-Force</h3>
 				</section>
 				<section>
-					Valutazioni può essere riassunto come la generazioni di permutazioni
+					Un modo alternativo, e più generico, per risolvere il problema Valutazioni algoritmicamente è quello di generare tutte le possibili permutazioni delle domande.
 				</section>
 				<section>
-					Invariante
+					L'algoritmo fissa una parte dell'array considerara già permutata (indici da 0 a $j$).
+					<br>
+					Ad ogni passo effettua lo swap tra l'elemento a indice $j$ e l'elemento a indice $i$ (compreso tra $j+1$ e $len(array)$), generando una nuova permutazione.
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						```
-						codice
+						permutazioni(arr, j):
+							if j == len(arr):
+								print(arr)
+								return
+							for idx in range(j, len(arr)):
+								arr.swap(idx, j)
+								permutazioni(arr, j+1)
+								arr.swap(idx, j)
 						```
 					</textarea>
 				</section>
-				<section>
-					Varianti
+				<section data-markdown>
+					<textarea data-template>
+						Bandi, ovvero disposizioni
+						```algo
+						disposizioni(arr, j, k):
+							if j == k:
+								print(arr(0..k))
+								return
+							for idx in range(j, len(arr)):
+								arr.swap(idx, j)
+								disposizioni(nums, j+1, k)
+								arr.swap(idx, j)
+						```
+					</textarea>
 				</section>
-				<section>
-					Bandi, ovvero disposizioni
-				</section>
-				<section>
-					Richio, ovvero disposizioni con ripetizioni
+				<section data-markdown>
+					<textarea data-template>
+						Richio, ovvero disposizioni con ripetizioni
+						```
+						disposizioni_ripetizioni(arr, sol, j, k):
+							if j == k:
+								print(arr(0..k))
+								return
+							for i in range(0, len(arr)):
+								sol[j] = arr[i]
+								arr.swap(i, j)
+								disposizioni_ripetizioni(arr, sol, j+1, k)
+								arr.swap(i, j)
+						```
+					</textarea>
 				</section>
 				<section id="fragments">
-					<p>
-						Riassumendo
-					</p>
-					<p>
-						Ora sappiamo generare lo spazio degli stati <br>
-						Ma di quanti stati parliamo?
-					</p>
+					Le tecniche sopra esposte permettono una ricerca esaustiva per molti dei problemi computazionalmente complessi.
+					<br>
+					Sono però trattabili per istanze significative?
 				</section>
 				<section>
-					GRAFICO DEL NUMERO DI STATI
+					Valutazioni richiede le permutazioni di 50 elementi
+					<br>
+					$50! = 3 \times 10^{64}$
+					<br>
+					Per dare un'idea di quanto sia un numero intrattabile:
+					<ul>
+						<li>Il numero di atomi dell'universo è circa $10^{80}$</li>
+						<li>Se generassimo una permutazione all'attosecondo ci vorrebbero $3\times 10^{34}$ millenni per terminare</li>
+					</ul>
 				</section>
 			</div>
 		</div>

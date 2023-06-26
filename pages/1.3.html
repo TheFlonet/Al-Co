@@ -57,8 +57,22 @@
 						<li>E-node: live node di cui si genererà il figlio</li>
 					</ol>
 				</section>
-				<section>
-					Pseudocodice Backtracking
+				<section data-markdown>
+					<textarea data-template>
+						```algo
+						backtracking(a, solution):
+							is_complete = complete(a, solution)
+							if !is_complete
+								reject = rifiuta(a, solution)
+								if !reject
+									solutions = expand(a, solution)
+									for sol in solutions
+										backtracking(a, solution)
+							else 
+								if accept(a, solution)
+									answer = solution
+						```
+					</textarea>
 				</section>
 				<section>
 					La politica di generazione degli E-node può avere come risultato diverse strategie di ricerca:
