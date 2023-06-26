@@ -57,9 +57,9 @@
 					con $x_1\dots x_n \in \{0, 1\}$
 				</section>
 				<section>
-					L'idea è combinare i due vincoli in uno unico per rifarsi al problema dello zaino binario.
-					
-					$$\sum_{k=1}^n ??? \leq ???$$
+					KP si può considerare come un caso degenere di Multi-dimensional KP, in cui $d = 1$.
+					<br>
+					Per questo motivo è ragionevole poter combinare i vincoli delle varie dimensioni in un unico per riportarsi allo zaino monodimensionale.
 				</section>
 				<section>
 					Il problema motivazionale "bando" può essere interpretato come Multiple-choice KP.
@@ -76,7 +76,28 @@
 					con $x_{ij} \in \{0, 1\}, i \in 1,\dots,m, j\in N_i$
 				</section>
 				<section>
-					
+					L'istanza di KP ha $n$ profitti $p_j$, pesi $w_j$ e capacità $C$.
+					<br>
+					MCKP si costruisce creando $m$ classi (di numero pari a $n$), dove ogni classe contiene due elementi:
+					<ul>
+						<li>$(p_{i1}, w_{i1}) = (0, 0)$</li>
+						<li>$(p_{i2}, w_{i2}) = (p_j, w_j)$</li>
+					</ul>
+				</section>
+				<section>
+					BACKUP
+				</section>
+				<section>
+					Intuitivamente è possibile combinare le equazioni dei due vincoli al fine di creare un'unica dimensione che vincola lo zaino.
+					<br>
+					Di base KP è equivalente a 1-KP, quindi sicuramente c'è un modo per passare da un problema all'altro
+				</section>
+				<section>
+					Trattando le diverse variabili $x_{ij}$ come oggetti diversi è possibile trasformare la funzione obiettivo e il primo vincolo in una forma analoga al problema dello zaino base.
+					<br>
+					Resta da tradurre il secondo vincolo.
+					<br>
+
 				</section>
 			</div>
 		</div>
