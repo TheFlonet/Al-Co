@@ -17,7 +17,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>2.2 Da SAT a 3CNF</section>
-				<section>Riassumere gli aspetti fondamentali relativi alla catena di riduzioni \(SAT \leq_P NNF \leq_P CNF \leq_P 3CNF\)</section>
+				<section>Riassumere gli aspetti fondamentali relativi alla catena di riduzioni \(SAT \leq_P NNF \leq_P CNF \leq_P 3CNF\).</section>
 				<section id="fragments">
 					<p>Obiettivo: dimostrare che KP è un problema NP-hard, ovvero che è polinomialmente riducibile a SAT.</p>
 
@@ -45,7 +45,7 @@
 				</section>
 				<section id="fragments">
 					<p>\[SAT \leq_P NNF\]</p>
-					<p class="fragment"> Si vuole costruire una funzione di riduzione $M: pf \to nnf$</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione <br>$M: pf \to nnf$</p>
 				</section>
 				<section>
 					$$\forall f. f \in SAT \iff M(f) \in NNF$$
@@ -100,7 +100,7 @@
 				</section>
 				<section id="fragments">
 					<p>\[NNF \leq_P CNF\]</p>
-					<p class="fragment"> Si vuole costruire una funzione di riduzione $T: nnf \to cnf$</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione <br>$T: nnf \to cnf$</p>
 				</section>
 				<section>
 					$$\forall f. f \in NNF \iff T(f) \in CNF$$
@@ -140,7 +140,7 @@
 				</section>
 				<section id="fragments">
 					<p>\[CNF \leq_P 3CNF\]</p>
-					<p class="fragment"> Si vuole costruire una funzione di riduzione $F: cnf \to 3cnf$</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione <br>$F: cnf \to 3cnf$</p>
 				</section>
 				<section>
 					$$\forall f. f \in CNF \iff F(f) \in 3CNF$$
@@ -158,7 +158,7 @@
 							<li>$f$ è già in 3CNF, $F$ non deve modificare nulla</li>
 							<li>$f = [l]$, $F$ aggiunge due nuove variabili e crea tutte le possibili triple</li>
 							<li>$f = [l_1, l_2]$, simile al secondo sottocaso, ma $F$ aggiunge una sola variabile</li>
-							<li>$f = [l_1,\dots,l_k]$, $k>3$, si aggiungono letterali ricorsivamente in modo da creare le triple una per volta, fino a ricondursi ai sottocasi precedenti</li>
+							<li>$f = [l_1,\dots,l_k]$, $k>3$, si aggiungono letterali ricorsivamente in modo da creare le triple una per volta, fino a ricondursi ai sottocasi precedenti.</li>
 						</ol>
 					</p>
 				</section>
@@ -167,7 +167,7 @@
 					<ol>
 						<li>Per induzione sul numero di clausole:<br>$C_1\_C_{n-1} \in CNF \iff$<br>$F(C_1\_C_{n-1}) \in 3CNF$</li>
 						<li>Per il primo caso:<br>$C_n \in CNF \iff F(C_n) \in 3CNF$</li>
-						<li>$(A \iff B \land C \iff D) \iff$<br>$((A \land C) \iff (B \land D))$ è una tautologia</li>
+						<li>$(A \iff B \land C \iff D) \iff$<br>$((A \land C) \iff (B \land D))$ è una tautologia.</li>
 					</ol>
 				</section>
 				<section>

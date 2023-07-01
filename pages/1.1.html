@@ -18,45 +18,47 @@
 			<div class="slides">
 				<section>1.1 Intrattabilità Algoritmica</section>
 				<section>
-					Illustrare i motivi per cui, nel tempo, sono state sviluppate precise tecniche algoritmiche per risolvere problemi detti "intrattabili"
+					Illustrare i motivi per cui, nel tempo, sono state sviluppate precise tecniche algoritmiche per risolvere problemi detti "intrattabili".
 				</section>
 				<section>
-					Una buona parte dei problemi può essere descritta come l'allocazione di risorse per massimizzare un ricavo. Troviamo quindi:
+					Una buona parte dei problemi può essere descritta come l'allocazione di risorse per massimizzare un ricavo.
+					<br>
+					Definiamo quindi:
 					<ul>
 						<li>Risorsa economica: ciò di cui si dispone e si può usare</li>
 						<li>Attività: diversi modi di usare le risorse economiche</li>
-						<li>Ricavo: quantità di guadagno derivato dall'allocazione di un certo quantitativo di risorse ad un'attività</li>
+						<li>Ricavo: quantità di guadagno derivato dall'allocazione di risorse in un'attività.</li>
 					</ul>
 				</section>
 				<section>
 					<h3>Ipotesi sulla funzione ricavo</h3>
 					<ul>
-						<li>Linearità: Il ricavo $g_i(x_i)$ dipende esclusivamente da $x_i$</li>
-						<li>Proporzionalità centrale: La funzione ricavo segue un andamento simile alla sigmoide</li>
-						<li>Composizione lineare dei ricavi: Il ricavo totale è la somma dei singoli ricavi</li>
-						<li>Partizione esatta: A fine processo sono state allocate tutte le risorse </li>
+						<li>Linearità: il ricavo $g_i(x_i)$ dipende solo da $x_i$</li>
+						<li>Proporzionalità centrale: la funzione ricavo segue un andamento simile alla sigmoide</li>
+						<li>Composizione lineare dei ricavi: il ricavo totale è la somma dei singoli ricavi</li>
+						<li>Partizione esatta: a fine processo sono state allocate tutte le risorse.</li>
 					</ul>
 				</section>
 				<section>
-					Il calcolo classico permette di affrontare questa categoria di problemi tramite l'uso di derivate prime, che permettono di calcolare i minimi e i massimi di una funzione.
+					Il calcolo classico permette di affrontare questa categoria di problemi tramite l'uso di derivate prime, che permettono di ricavare i minimi e i massimi di una funzione.
 				</section>
 				<section>
-					Tuttavia gli strumenti del calcolo classico non permettono di ricavare risposte che corrispondono agli estremi dell'intervallo considerato.
+					Tuttavia, gli strumenti del calcolo classico non permettono di ricavare risposte che corrispondono agli estremi dell'intervallo considerato.
 					<br>
-					Inoltre non è possibile applicare la derivata a funzioni non continue.
+					Inoltre, non è possibile applicare la derivata a funzioni non continue.
 				</section>
 				<section>
-					Anche supponendo di lavorare sempre con funzioni derivabili e con minimi/massimi non corrispondenti ad estremi dell'intervallo di derivazione il calcolo classico può risultare intrattabile.
+					Il calcolo classico può risultare intrattabile anche supponendo di lavorare con funzioni ovunque derivabili.
 					<br>
-					Avendo $r$ radici per $N$ variabili ed $e$ estremi per $V$ vincoli il numero di punti da provare nel caso pessimo corrisponde a: $(r + e*V)^N$
+					Avendo $r$ radici per $N$ variabili ed $e$ estremi per $V$ vincoli, il numero di punti da provare nel caso pessimo corrisponde a: $(r + e*V)^N$.
 				</section>
 				<section>
 					<h3>Programmazione lineare</h3>
-					Non risulta adatta per via della natura delle variabili considerate
+					Non risulta adatta per via della natura delle variabili considerate.
 				</section>
 				<section>
 					<h3>Programmazione Lineare Intera</h3>
-					Risulta equivalente al calcolo classico
+					Risulta equivalente al calcolo classico.
 				</section>
 				<section>
 					<h3>Euristiche greedy</h3>
@@ -65,7 +67,7 @@
 				<section>
 					La ricerca di massimi e minimi in uno spazio è un problema attuale e con ripercussioni in svariati settori.
 					<br>
-					Tra questi si può citare l'addestramento di reti profonde, che minimizzano l'errore su un dataset.
+					Tra questi, si può citare l'addestramento di reti profonde che minimizzano l'errore su un dataset.
 					<br>
 					<img src="../res/noshort.png" alt="Esempio di loss landscape" height="250em">
 				</section>

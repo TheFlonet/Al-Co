@@ -17,7 +17,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>1.6 KP e algoritmi greedy/approssimazione</section>
-				<section>Sviluppare una panoramica di algoritmi greedy relativi al problema dello zaino, propedeutica a parlare di "Relative performance guarantee" e "tightness"</section>
+				<section>Sviluppare una panoramica di algoritmi greedy relativi al problema dello zaino, propedeutica a parlare di <em>Relative performance guarantee</em> e <em>tightness</em>.</section>
 				<section>
 					Le versioni naive degli algoritmi per l'approssimazione di KP hanno come ipotesi quella di avere gli elementi ordinati in base a $\frac{profitto}{peso}$ decrescente.
 				</section>
@@ -30,13 +30,17 @@
 				<section>
 					<h2>Algoritmo greedy</h2>
 					<p>
-						L'elemento viene inserito se il suo peso sommato al peso finora inserito non eccede la capacità, se non riesce scarta l'elemento.
+						L'elemento viene inserito se il suo peso sommato al peso corrente non eccede in capacità. 
+						<br>
+						Se non riesce, scarta l'elemento.
 					</p>
 				</section>
 				<section>
 					<h2>Algoritmo extended-greedy</h2>
 					<p>
-						Esegue l'algoritmo greedy, al termine se l'elemento di profitto massimo è maggiore della soluzione ottenuta sostituisce il contenuto dello zaino con il solo elemento di massimo profitto.
+						Esegue l'algoritmo greedy. 
+						<br>
+						Al termine, se l'elemento di profitto massimo è maggiore della soluzione ottenuta, sostituisce il contenuto dello zaino con il solo elemento di massimo profitto.
 					</p>
 				</section>
 				<section>
@@ -54,37 +58,41 @@
 				</section>
 				<section>
 					<p>
-						<b>Relative Performance Guarantee</b>: $\frac{z^G(T)}{z^*_P(T)}$, <br>fornisce una garanzia delle prestazioni.
+						<em>Relative Performance Guarantee</em>: $\frac{z^G(T)}{z^*_P(T)}$, <br>fornisce una garanzia delle prestazioni.
 					</p>
 					<p>
-						<b>Tightness</b>: un'approssimazione è tight se esiste un'istanza del problema tale per cui $\frac{z^G(T)}{z^*_P(T)} = k$
+						<em>Tightness</em>: un'approssimazione è tight se esiste un'istanza del problema tale per cui $\frac{z^G(T)}{z^*_P(T)} = k$.
 					</p>
 				</section>
 				<section>
 					<h2>$k$-approssimazioni</h2>
 					<p>
-						Dato un algoritmo $G$ l'algoritmo è una <br>$k$-approssimazione, $0 \leq k \leq 1$, se non esiste un'istanza $I$ del problema $P$ tale che $\frac{z^G(I)}{Z^*_P(I)} < k$
+						Dato un algoritmo $G$, esso è una <br>$k$-approssimazione, $0 \leq k \leq 1$, se non esiste un'istanza $I$ del problema $P$ tale che $\frac{z^G(I)}{Z^*_P(I)} < k$.
 					</p>
 				</section>
-				<section>Intuitivamente si può immaginare che considerando più elementi dello zaino contemporaneamente gli algoritmi greedy forniscono un'approssimazione sempre migliore della soluzione ottima.</section>
+				<section>
+					Intuitivamente si può immaginare che, considerando più elementi dello zaino contemporaneamente, gli algoritmi greedy forniscono un'approssimazione sempre migliore della soluzione ottima.</section>
 				<section>
 					L'algoritmo divide il problema in due fasi:
 					<ol>
-						<li>Enumera la una parte degli elementi (parte $A$)</li>
-						<li>Applica l'algoritmo KP agli altri elementi (parte $B$)</li>
+						<li>Enumera una parte degli elementi (parte $A$)</li>
+						<li>Applica l'algoritmo KP agli altri elementi (parte $B$).</li>
 					</ol>
-					Costruendo la soluzione in modo greedy posso incontrare un elemento $p_m$ che viene scartato ma è contenuto nella soluzione ottima.
+					<br><br>
+					Costruendo la soluzione in modo greedy, possiamo incontrare un elemento $p_m$ che viene scartato, ma è contenuto nella soluzione ottima.
 					<br>
-					Tale elemento crea un sottoinsieme di $B$, $B'$, che comprende gle elementi che lo precedono.
+					Tale elemento crea un sottoinsieme di $B$, $B'$, che comprende gli elementi che lo precedono.
 				</section>
 				<section>
 					$p(B^*) \leq p(B') + p_m$, quindi 
 					$\frac{p(A) + p(B^*)}{p(A) + p(B)} \leq \frac{p(A) + p(B') + p_m}{p(A) + p(B)} = \frac{p(A) + p(B')}{p(A) + p(B)} + \frac{p_m}{p(A) + p(B)}$
+					<br><br>
+					Il primo termine è sempre $\leq 1$.
 					<br>
-					Il primo termine è sempre $\leq 1$, il secondo, siccome $A$ contiene $k$ elementi di profitto $\geq k$ approssima a $\frac{1}{k}$
+					Il secondo approssima a $\frac{1}{k}$ siccome $A$ contiene $k$ elementi di profitto $\geq k$.
 				</section>
 				<section>
-					Avendo dimostrato il crescente aumento della Relative Performance Guarantee è possibile bilanciare la qualità della peggiore soluzione che si è disposti ad ottenere con il costo computazionale necessario per calcolarla.
+					Avendo dimostrato il crescente aumento della Relative Performance Guarantee, è possibile bilanciare la qualità della peggiore soluzione che si è disposti ad ottenere con il costo computazionale necessario per calcolarla.
 				</section>
 			</div>
 		</div>

@@ -17,9 +17,13 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>2.5 da EXCO a SubsetSum</section>
-				<section>Riassuere gli aspetti fondamentali relativi alla riduzione \(EXCO \leq_P SubsetSum\)</section>
+				<section>Riassumere gli aspetti fondamentali relativi alla riduzione \(EXCO \leq_P SubsetSum\).</section>
 				<section>
-					Ultimo passo della catena di riduzioni è convertire EXCO in SubsetSum. Questo garantisce che SAT è polinomialmente riducibile a KP in quanto KP è un'istanza di SubsetSum in cui testiamo tutte le possibili $Sum$ da 1 alla capacità dello zaino.
+					L'ultimo passo della catena di riduzioni è convertire EXCO in SubsetSum. 
+					<br>
+					Questo garantisce che SAT è polinomialmente riducibile a KP, in quanto KP è un'istanza di SubsetSum. 
+					<br>
+					In tale istanza vengono testate tutte le possibili $Sum$ da 1 alla capacità dello zaino.
 				</section>
 				<section id="fragments">
 					<h2>Problema EXCO</h2>
@@ -33,25 +37,25 @@
 				<section id="fragments">
 					<h2>Problema SubsetSum</h2>
 					<p class="fragment">
-						Siano dati un insieme numerico finito $X$ ed un numero $S$. Determinare l'esistenza di un sottoinsieme $Y$ di $X$, table che la somma di tutti gli elementi di $Y$ sia pari ad $S$.
+						Siano dati un insieme numerico finito $X$ ed un numero $S$. Determinare l'esistenza di un sottoinsieme $Y$ di $X$, table che la somma di tutti gli elementi di $Y$ equivalente a $S$.
 					</p>
 				</section>
 				<section id="fragments">
 					<p>\[EXCO \leq_P SubsetSum\]</p>
-					<p class="fragment"> Si vuole costruire una funzione di riduzione $E_S: Set\times Set\times Set \to \mathcal{P}(\mathbb{N})\times\mathbb{N}$</p>
+					<p class="fragment"> Si vuole costruire una funzione di riduzione <br>$E_S: Set\times Set\times Set \to \mathcal{P}(\mathbb{N})\times\mathbb{N}$</p>
 				</section>
 				<section>
-					La funzione $E_S$ è definita come
+					La funzione $E_S$ è definita come:
 
 					$$E_S((U, S), X) = (\{\sum_{i=0}^{|U|-1}p^ix[i] \vert x \in X\}, \frac{p^{|U|}-1}{p-1})$$
 
 					Dove $\#x = |\{A \vert x \in A \in S\}|$
 					<br>
-					Dimensione degli insiemi di $S$ che contengono $x$
-					<br>
+					dimensione degli insiemi di $S$ che contengono $x$
+					<br><br>
 					$p = 1 + max\{\#x \vert x \in U\}$
 					<br>
-					Primo numero che non genera riporti nelle somme
+					primo numero che non genera riporti nelle somme.
 				</section>
 				<section>
 					$\frac{p^{|U|}-1}{p-1} = p^{m-1}+\dots+1$

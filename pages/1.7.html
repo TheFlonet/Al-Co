@@ -17,11 +17,11 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>1.7 KP e Branch&Bound</section>
-				<section>Illustrare origine e funzionamento della tecnica algoritmica Branch&Bound relativa al problema dello zaino</section>
+				<section>Illustrare origine e funzionamento della tecnica algoritmica <em>Branch&Bound</em> relativa al problema dello zaino.</section>
 				<section>
 					Gli algoritmi greedy sono in grado di fornire soluzioni più o meno ragionevoli per il problema dello zaino.
 					<br>
-					Se però si vuole una risposta al problema è necessario un approccio come quello del Branch&Bound, che è considerato ottimale per KP.
+					Se però si vuole una risposta al problema, è necessario un approccio come quello del Branch&Bound che è considerato ottimale per KP.
 				</section>
 				<section>
 					La funzione costo è definita come: 
@@ -30,20 +30,21 @@
 					<ul>
 						<li>$x[0\dots j)$ indica l'E-node in cui tutti gli elementi con indice $< j$ hanno una valore assegnato</li>
 						<li>$f(h(x[0\dots j)))$ è il profitto fino a quel punto</li>
-						<li>$\hat{g}(x[0\dots j))$ è la previsione ottimistica del potenziale profitto rimanente</li>
+						<li>$\hat{g}(x[0\dots j))$ è la previsione ottimistica del potenziale profitto rimanente.</li>
 					</ul>
 				</section>
 				<section>
 					Durante l'esplorazione dell'albero è possibile calcolare due semplici stime di upper e lower bound:
+					<br><br>
 					<ul>
 						<li>L'algoritmo greedy è una stima del lower-bound</li>
-						<li>L'algoritmo LKP è una stima dell'upper-bound</li>
+						<li>L'algoritmo LKP è una stima dell'upper-bound.</li>
 					</ul>
 				</section>
 				<section>
 					<h3>Invariante - caso base</h3>
 					<p>
-						Viene generata una prima soluzione partendo dalla radice $x[0\dots0)$ tramite l'algoritmo greedy
+						Viene generata una prima soluzione partendo dalla radice $x[0\dots0)$ tramite l'algoritmo greedy.
 					</p>
 				</section>
 				<section>
@@ -54,19 +55,20 @@
 							<li>$x[0\dots j)$ è l'E-node</li>
 							<li>La soluzione migliore calcolata si trova in $x[0\dots r)$, e assicura il profitto $z^*(x[0\dots r))$</li>
 						</ul>
-						Si possono verificare tre casi:
 					</p>
 				</section>
 				<section>
+					Si possono verificare tre casi:
+					<br><br>
 					<ol>
-						<li>Rifiuto del nodo: posso potare l'intero sotto albero se
+						<li>Rifiuto del nodo: si può potare il sotto albero se:
 							<ul>
-								<li>il nuovo nodo porta ad eccedere la capacità</li>
+								<li>il nuovo nodo porta a eccedere la capacità</li>
 								<li>il nuovo upper-bound è minore del lower-bound ottimo</li>
 							</ul>
 						</li>
 						<li>Aggiornamento: se il nuovo nodo migliora la stima del miglior profitto</li>
-						<li>Espansione: se il sottoalbero è in grado di produrre soluzioni migliorative</li>
+						<li>Espansione: se il sottoalbero è in grado di produrre soluzioni migliorative.</li>
 					</ol>
 				</section>
 			</div>

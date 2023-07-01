@@ -18,9 +18,9 @@
 			<div class="slides">
 				<section>3.2.1 Martin's solution</section>
 				<section id="fragments">
-					<p>A fine corso è stata illustrata una possibile riduzione in forma PLI del problema MST chiamata "Martin's solution"</p>
-					<p class="fragment">Discutere la complessità della "Martin's solution"</p>
-					<p class="fragment">Illustrare intuizioni alternative a quelle fornite a lezione riguardo al significato dei vincoli lineari che caratterizzano la "Martin's solution" e che dovrebbero renderla più compatta di quelle tradizionali</p>
+					<p>A fine corso è stata illustrata una possibile riduzione in forma PLI del problema MST chiamata <em>Martin's solution</em>.</p>
+					<p class="fragment">Discutere la complessità della <em>Martin's solution</em>.</p>
+					<p class="fragment">Illustrare intuizioni alternative a quelle fornite a lezione riguardo al significato dei vincoli lineari che caratterizzano la <em>Martin's solution</em> e che dovrebbero renderla più compatta di quelle tradizionali.</p>
 				</section>
 				<section>
 					<h2>Problema MST</h2>
@@ -32,18 +32,18 @@
 					</p>
 				</section>
 				<section>
-					Sappiamo esistere soluzioni per rendere il problema sotto forma di programmazione lineare intera con variabili binarie, 
-					come Sub-tour elimination e Cut-set.
-					<br>
-					Purtroppo tali soluzioni portano ad un numero esponenziale di vincoli nel caso peggiore.
+					Sappiamo che esistono soluzioni per rendere il problema sotto forma di programmazione lineare intera con variabili binarie, 
+					<br>come Sub-tour elimination e Cut-set.
+					<br><br>
+					Purtroppo, tali soluzioni portano a un numero esponenziale di vincoli nel caso peggiore.
 				</section>
 				<section>
-					Formulazioni alternative, 
-					<br>con un numero polinomiale di vincoli sono:
+					Formulazioni alternative
+					<br>con un numero polinomiale di vincoli:
 					<p>
 						<ul>
 							<li>Single-commodity flow formulation</li>
-							<li>Martin's formulation</li>
+							<li>Martin's formulation.</li>
 						</ul>
 					</p>
 				</section>
@@ -56,7 +56,7 @@
 							<li>$\sum_{(i,j) \in E} x_{ij} = n-1$</li>
 							<li>$y_{ij}^k + y_{ji}^k = x_{ij}, \forall (i, j) \in E, k \in V$</li>
 							<li>$\sum_{k\in V \ {i, j}}y_{ik}^j+x_{ij} = 1, \forall (i, j) \in E$</li>
-							<li>$x_{ij}, y_{ij}^k, y_{ji}^k \in {0, 1}, \forall (i, j) \in E, k \in V$</li>
+							<li>$x_{ij}, y_{ij}^k, y_{ji}^k \in {0, 1}, \forall (i, j) \in E, k \in V$.</li>
 						</ol>
 					</p>
 				</section>
@@ -74,7 +74,7 @@
 							0 & k\ \text{è connesso a i} \\
 							1 & k\ \text{è connesso a j}
 						\end{cases}$$
-						Discorso analogo per $y_{ji}^k$
+						Discorso analogo per $y_{ji}^k$.
 					</p>
 				</section>
 				<section>
@@ -83,7 +83,7 @@
 						<ol>
 							<li>L'albero deve avere esattamente $n-1$ archi</li>
 							<li>Se $x_{ij} = 1, \forall k \in V, k \in$ "lato" di $i$ o di $j$</li>
-							<li>Se $x_{ij} = 1$ tutti gli altri nodi sono connessi a $i$</li>
+							<li>Se $x_{ij} = 1$ tutti gli altri nodi sono connessi a $i$.</li>
 						</ol>
 					</p>
 				</section>

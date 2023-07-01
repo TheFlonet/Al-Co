@@ -17,7 +17,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>1.5 Knapsack</section>
-				<section>Sviluppare una panoramica sul problema dello zaino, trattando aspetti come: rilevanza, varianti, esempi di problemi essenzialmente reali riconducibili a KP, o sue varianti, equivalenza tra varianti, non necessariamente sviluppate a lezione</section>
+				<section>Sviluppare una panoramica sul problema dello zaino, trattando aspetti come: rilevanza, varianti, esempi di problemi essenzialmente reali riconducibili a KP, o sue varianti, equivalenza tra varianti, non necessariamente sviluppate a lezione.</section>
 				<section>
 					<h2>Definizione di KP</h2>
 					<p>
@@ -32,8 +32,8 @@
 					</p>
 				</section>
 				<section>
-					Un esempio pratico del problema della zaino si può riscontrare sul problema motivazionale Valutazioni
-					<br>
+					Un esempio pratico del problema della zaino si può riscontrare su Valutazioni.
+					<br><br>
 					massimizzare $\sum_{k=1}^{50}p_kx_k$
 					<br>
 					soggetto a $\sum_{k=1}^{50}m_kx_k \leq C$
@@ -44,11 +44,14 @@
 				</section>
 				<section>
 					Il problema motivazionale Rischio può essere interpretato come Multi-dimensional KP con $d=2$.
-					In questo caso le due dimensioni rappresentano l'affidabilità e il guadagno.
+					<br>
+					In questo caso, le due dimensioni rappresentano l'affidabilità e il guadagno.
 				</section>
 				<section>
 					<h3>Riduzione di Multi-dimensional KP</h3>
-					massimizzare $\sum_{k=1}^np_kx_k$, soggetto a
+					massimizzare $\sum_{k=1}^np_kx_k$ 
+					<br>
+					Soggetto a:
 					<br>
 					$\sum_{k=1}^nw_{1k}x_k \leq C_1$
 					<br>
@@ -59,15 +62,18 @@
 				<section>
 					KP si può considerare come un caso degenere di Multi-dimensional KP, in cui $d = 1$.
 					<br>
-					Per questo motivo è ragionevole poter combinare i vincoli delle varie dimensioni in un unico per riportarsi allo zaino monodimensionale.
+					Per questo motivo è possibile combinare i vincoli delle varie dimensioni in uno solo per ridursi allo zaino monodimensionale.
 				</section>
 				<section>
 					Il problema motivazionale Bandi può essere interpretato come Multiple-choice KP.
-					In cui avendo un solo "zaino" si vuole selezionare un elemento per tipologia.
+					<br>
+					In tale problema, avendo un solo <em>zaino</em>, si vuole selezionare un elemento per tipologia.
 				</section>
 				<section>
 					<h3>Riduzione di Multiple-choice KP</h3>
-					massimizzare $\sum_{i=1}^m\sum_{j \in N_i}p_{ij}x_{ij}$, soggetto a
+					massimizzare $\sum_{i=1}^m\sum_{j \in N_i}p_{ij}x_{ij}$
+					<br>
+					Soggetto a:
 					<br>
 					$\sum_{i=1}^m\sum_{j \in N_i}w_{ij}x_{ij} \leq C$
 					<br>
@@ -81,23 +87,8 @@
 					MCKP si costruisce creando $m$ classi (di numero pari a $n$), dove ogni classe contiene due elementi:
 					<ul>
 						<li>$(p_{i1}, w_{i1}) = (0, 0)$</li>
-						<li>$(p_{i2}, w_{i2}) = (p_j, w_j)$</li>
+						<li>$(p_{i2}, w_{i2}) = (p_j, w_j)$.</li>
 					</ul>
-				</section>
-				<section>
-					BACKUP
-				</section>
-				<section>
-					Intuitivamente è possibile combinare le equazioni dei due vincoli al fine di creare un'unica dimensione che vincola lo zaino.
-					<br>
-					Di base KP è equivalente a 1-KP, quindi sicuramente c'è un modo per passare da un problema all'altro
-				</section>
-				<section>
-					Trattando le diverse variabili $x_{ij}$ come oggetti diversi è possibile trasformare la funzione obiettivo e il primo vincolo in una forma analoga al problema dello zaino base.
-					<br>
-					Resta da tradurre il secondo vincolo.
-					<br>
-
 				</section>
 			</div>
 		</div>

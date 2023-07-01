@@ -17,10 +17,10 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>1.4 Least-Cost</section>
-				<section>Discutere criteri di generazione e visita dello spazio degli stati per superare le limitazioni del Backtracking, illustrando caratteristiche principali, criteri di sintesi e potenzialità</section>
+				<section>Discutere criteri di generazione e visita dello spazio degli stati per superare le limitazioni del Backtracking, illustrando caratteristiche principali, criteri di sintesi e potenzialità.</section>
 				<section id="fragments">
 					<h3>Spettro delle ricerche</h3>
-					<p class="fragment">La visita in ampiezza si ottiene con ricerca FIFO, la visita in profondità è una LIFO</p>
+					<p class="fragment">La visita in ampiezza si ottiene con ricerca FIFO, mentre la visita in profondità è una LIFO.</p>
 					<p class="fragment">E se venissero combinate secondo una funzione di costo?</p>
 				</section>
 				<section>
@@ -28,13 +28,13 @@
 				</section>
 				<section>
 					<h3>Perché è necessario?</h3>
-					Anche con piccoli esempi si può mostrare come la strategia di ricerca intuitivamente migliore non abbia riscontri empirici.
+					Anche con piccoli esempi, si può mostrare come la strategia di ricerca intuitivamente migliore non abbia riscontri empirici.
 					<br>
-					Idealmente vorremmo poter scegliere ad ogni passo l'estremo migliore per fare pruning di più nodi possibili.
+					Idealmente, vorremmo poter scegliere ad ogni passo l'estremo migliore per fare pruning di più nodi possibili.
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						Versione iterativa dell'algoritmo di Backtracking
+						Versione iterativa dell'algoritmo di Backtracking:
 						```algo
 						least_cost(live_nodes):
 							while live_nodes is not empty
@@ -51,26 +51,26 @@
 				<section>
 					La funzione di $ranking$ permette di scegliere in modo flessibile il live node da etichettare come E-node.
 					<br>
-					La funzione di $ranking$ ideale ha due problemi:
+					La funzione ideale ha due problemi:
 					<ol>
 						<li>Deve essere computazionalmente efficiente</li>
-						<li>Deve approssimare al meglio il valore reale ignoto</li>
+						<li>Deve approssimare al meglio il valore reale ignoto.</li>
 					</ol>
 				</section>
 				<section>
 					La funzione costo sarà quindi:
 					$$\hat{c}(x) = f(h(x)) + \hat{g}(x)$$
-					Dove
+					Dove:
 					<ul>
 						<li>$h(x)$ è la lunghezza del cammino dal nodo radice a quello corrente</li>
 						<li>$f(\cdot)$ è una funzione monotona che indica il costo per arrivare in un certo nodo</li>
-						<li>$\hat{g}(x)$ è una stima del costo per arrivare alla risposta</li>
+						<li>$\hat{g}(x)$ è una stima del costo per arrivare alla risposta.</li>
 					</ul>
 				</section>
 				<section>
 					Questo tipo di approccio permette facilmente di ricondursi alle visite Breadth-search e D-search. 
 					<br>
-					Nella prima è sufficiente porre la funzione $\hat{g}$ a 0, per la D-search invece viene resa costante e nulla la funzione $f(\cdot)$
+					Nella prima è sufficiente porre la funzione $\hat{g}$ a 0, <br>invece per la D-search viene resa costante e nulla la funzione $f(\cdot)$.
 				</section>
 			</div>
 		</div>
