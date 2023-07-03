@@ -57,40 +57,51 @@
 					</p>
 				</section>
 				<section>
-					<p>
-						<em>Relative Performance Guarantee</em>: $\frac{z^G(T)}{z^*_P(T)}$, <br>fornisce una garanzia delle prestazioni.
-					</p>
-					<p>
-						<em>Tightness</em>: un'approssimazione è tight se esiste un'istanza del problema tale per cui $\frac{z^G(T)}{z^*_P(T)} = k$.
-					</p>
+					<h3>Relative Performance Guarantee</h3>
+					Definita come $\frac{z^G(T)}{z^*_P(T)}$,
+					<br>fornisce una garanzia delle prestazioni.
 				</section>
 				<section>
 					<h2>$k$-approssimazioni</h2>
 					<p>
-						Dato un algoritmo $G$, esso è una <br>$k$-approssimazione, $0 \leq k \leq 1$, se non esiste un'istanza $I$ del problema $P$ tale che $\frac{z^G(I)}{Z^*_P(I)} < k$.
+						Dato un algoritmo $G$, esso è una $k$-approssimazione, $0 \leq k \leq 1$, se non esiste un'istanza $I$ del problema $P$ tale che $\frac{z^G(I)}{Z^*_P(I)} < k$.
+					</p>
+					<p>
+						Se esiste un'istanza per cui $\frac{z^G(I)}{Z^*_P(I)} = k$ l'algoritmo è definito <em>Tight</em>.
 					</p>
 				</section>
 				<section>
-					Intuitivamente si può immaginare che, considerando più elementi dello zaino contemporaneamente, gli algoritmi greedy forniscono un'approssimazione sempre migliore della soluzione ottima.</section>
-				<section>
-					L'algoritmo divide il problema in due fasi:
-					<ol>
-						<li>Enumera una parte degli elementi (parte $A$)</li>
-						<li>Applica l'algoritmo KP agli altri elementi (parte $B$).</li>
-					</ol>
-					<br><br>
-					Costruendo la soluzione in modo greedy, possiamo incontrare un elemento $p_m$ che viene scartato, ma è contenuto nella soluzione ottima.
-					<br>
-					Tale elemento crea un sottoinsieme di $B$, $B'$, che comprende gli elementi che lo precedono.
+					Intuitivamente si può immaginare che, considerando più elementi dello zaino contemporaneamente, gli algoritmi greedy forniscono un'approssimazione sempre migliore della soluzione ottima.
 				</section>
 				<section>
-					$p(B^*) \leq p(B') + p_m$, quindi 
-					$\frac{p(A) + p(B^*)}{p(A) + p(B)} \leq \frac{p(A) + p(B') + p_m}{p(A) + p(B)} = \frac{p(A) + p(B')}{p(A) + p(B)} + \frac{p_m}{p(A) + p(B)}$
-					<br><br>
-					Il primo termine è sempre $\leq 1$.
+					<h3>Schema di approssimazione</h3>
+					Si considerano $l$ elementi ($l = \frac{1}{\epsilon} - 2$)
 					<br>
-					Il secondo approssima a $\frac{1}{k}$ siccome $A$ contiene $k$ elementi di profitto $\geq k$.
+					L'insieme di $l$ elementi $L^*$ corrisponde al sottoinsieme enumerato, che per definizione assumerà il valore ottimo.
+					<br>
+					<ul>
+						<li>$S$ è il problema restante dopo aver inserito $L^*$</li>
+						<li>$z_S^* = OPT(S)$</li>
+						<li>$z_S^{EG}$ è il risultato di extended-greedy su $S$.</li>
+					</ul>
 				</section>
+				<section>
+					Caso 1. $\sum_{j \in L^*}p_j \geq \frac{l}{l+2}z^*$
+					$$z^A \geq \sum_{j \in L^*}p_j + z_S^{EG} \geq \sum_{j \in L^*}p_j + \frac{1}{2}z_S^*$$
+					$$z^A \geq \frac{1}{2}(z^* + \frac{l}{l+2}z^*) = \frac{l+1}{l+2}z^*$$
+				</section>
+				<section>
+					Caso 2. $\sum_{j \in L^*}p_j < \frac{l}{l+2}z^*$
+					$$z^* \leq \sum_{j \in L^*}p_j + z_S^{EG} + \frac{1}{l+2}z^* \leq z^A + \frac{1}{l+2}z^*$$
+					$$z^A \geq \frac{l+1}{l+2}z^*$$
+				</section>
+				<section>
+					In entrambi i casi si ottiene l'equazione $z^A \geq \frac{l+1}{l+2}z^*$
+					<br>
+					Che per definizione su $l$ diventa:
+					$$z^A \geq \frac{l+1}{l+2}z^* \geq \frac{\frac{1}{\epsilon}-1}{\frac{1}{\epsilon}}z^* = (1-\epsilon)z^*$$
+				</section>
+
 				<section>
 					Avendo dimostrato il crescente aumento della Relative Performance Guarantee, è possibile bilanciare la qualità della peggiore soluzione che si è disposti ad ottenere con il costo computazionale necessario per calcolarla.
 				</section>
