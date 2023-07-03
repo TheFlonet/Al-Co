@@ -3,7 +3,8 @@
 // - https://revealjs.com/config/
 Reveal.initialize({
     hash: true,
-
+    width: 1280,
+    height: 720,
     // Learn about plugins: https://revealjs.com/plugins/
     plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
 });
