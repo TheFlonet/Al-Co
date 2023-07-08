@@ -1,8 +1,9 @@
-*.pdf
 demo.html
 test/
 examples/
 .DS_Store
 tmp-docs/
 status.md
-codice/
+codice/sorgenti-prof
+codice/.idea
+codice/venv
