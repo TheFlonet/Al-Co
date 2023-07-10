@@ -5,5 +5,10 @@ examples/
 tmp-docs/
 status.md
 codice/sorgenti-prof
-codice/.idea
+codice/.idea/
 codice/venv
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/Al-Co.iml
+.idea/.gitignore
